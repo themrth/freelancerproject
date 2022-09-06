@@ -1,0 +1,40 @@
+<%- include('partials/_header.ejs') -%>
+        <%- include('partials/_navigation.ejs') -%>
+        <%- include('partials/_masthead.ejs') -%>
+        <!-- Portfolio Section-->
+        
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portföy</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-between">
+                    <!-- Portfolio Item 1-->
+                    <% for (let i = 0; i < portfolios.length; i++) { %>
+                        <div class="col-md-6 col-lg-4 mb-5">
+                            <a href="/portfolio/<%= portfolios[i]._id%>">
+                            <div class="portfolio-item mx-auto" >
+                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                
+                            </div>
+                            <div style="background-color: #1abc9c; color: white; border-radius: 10px; height: 40px; text-align: center; font-size: 25px;">
+                                <label ><%= portfolios[i].title%></label>
+                            </div>
+                            </a>
+                        </div> 
+                    <% } %>
+                </div>
+            </div>
+        </section>
+        
+        
+        <%- include('partials/_footer.ejs') -%>
